@@ -1,38 +1,258 @@
-.App {
+/* Navbar */
+.navbar-custom {
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  background-color: #343a40; /* Dark background */
+  border-bottom: 3px solid #007bff; /* Blue bottom border */
+  position:fixed;
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-custom .nav-link {
+  color: #ddd;
+}
+
+.navbar-custom .nav-link:hover {
+  color: #fff;
+}
+.navbar-custom .navbar-toggler{
+  border-color:aliceblue;
+}
+
+
+.navbar-custom .nav-link.active {
+  color: #007bff; /* Blue color to indicate active link */
+  font-weight: bold;
+  border-bottom: 2px solid #007bff; /* Bottom border to highlight active link */
+}
+
+/*app */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-top: 10%;
+  font-family: Arial, sans-serif;
+}
+
+.app-navbar {
+  background-color: #343a40;
+  padding: 10px 0;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.footer-custom {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-custom a {
+  color: #6c757d;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.footer-custom a:hover {
+  color: #adb5bd;
+  text-decoration: underline;
+}
+
+.user-profile {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.user-profile label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.user-profile input,
+.user-profile textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.user-profile button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-profile button:hover {
+  background-color: #0056b3;
+}
+
+/* Content Section Styles */
+.content-section {
+  margin: 30px 0;
+}
+
+.content-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.content-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer Styles */
+.footer-custom {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 20px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer-custom a {
+  color: #007bff;
+  text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer-custom a:hover {
+  color: #0056b3;
+}
+/* recommendation */
+.recommendation {
+  background-color: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.recommendation h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.recommendation p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+/* feedback */
+.feedback {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.feedback h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.feedback .rating-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.feedback .rating-container button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.feedback .rating-container button:hover {
+  background-color: #0056b3;
+}
+/* dscvr content */
+.dscvr-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dscvr-content h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.dscvr-content p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.dscvr-content .content-item {
+  margin-bottom: 15px;
+}
+
+.dscvr-content .content-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.search-filter, .trending-content, .feedback, .notifications, .content-submission, .user-analytics {
+  margin-bottom: 20px;
+}
+
+.search-filter input, .content-submission input, .content-submission textarea {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.notification-bell {
+  position: relative;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
+.notification-bell .badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 0.2em 0.5em;
+  font-size: 0.8em;
+}
+
+.notification-dropdown {
+  display: none;
+}
+
+.notification-bell:hover + .notification-dropdown {
+  display: block;
+  margin-left: 20px;
+
 }
