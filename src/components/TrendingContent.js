@@ -4,7 +4,7 @@ const TrendingContent = () => {
   const [trending, setTrending] = useState([]);
 
   useEffect(() => {
-    fetch('https://api.dsc')
+    fetch('Reddit API for trending posts: https://www.reddit.com/r/all/top.json')
       .then(response => response.json())
       .then(data => setTrending(data))
       .catch(error => console.error('Error fetching trending content:', error));
