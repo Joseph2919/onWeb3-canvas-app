@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { getSolanaKeypair } from '../utils/SolanaWallet';
 import { Connection, PublicKey, Transaction, SystemProgram } from '@solana/web3.js';
+import PuzzleGame from './components/PuzzleGame';
 
 const TrendingContent = () => {
   const [recipientPublicKey, setRecipientPublicKey] = useState('');
   const [status, setStatus] = useState('');
   const [walletPublicKey, setWalletPublicKey] = useState('');
   const [walletKeypair, setWalletKeypair] = useState(null);
+  const [isPuzzleSolved, setIsPuzzleSolved] = useState(false);
+
 
   useEffect(() => {
     const keypair = getSolanaKeypair();
@@ -21,9 +24,15 @@ const TrendingContent = () => {
       setStatus('Wallet not initialized.');
       return;
     }
-
     try {
       setStatus('Claiming airdrop...');
+
+      if (isPuzzleSolved) {
+        // Airdrop logic goes here
+        setStatus('Airdrop successful!');
+      } else {
+        setStatus('Solve the puzzle to claim the airdrop.');
+      };
 
       // Update the connection URL to Testnet
       const connection = new Connection('https://api.testnet.solana.com', 'confirmed');
@@ -50,6 +59,7 @@ const TrendingContent = () => {
   return (
     <div className="trending-content">
       <h2>Claim Airdrop</h2>
+      <PuzzleGame onSolve={setIsPuzzleSolved} />
       <input
         type="text"
         placeholder="Enter Recipient Public Key"
